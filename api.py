@@ -23,11 +23,6 @@ def do_return():
     return jsonify(
         {"result": {"Error01": "You must submit a whole number!"}})
 
-@api.route('/fibo/api/v1.0', methods=['POST', 'GET'])
-def do_return():
-    return jsonify(
-        {"result": {"Error01": "You must submit a whole number!"}})
-
 @api.route('/fibo/api/v1.0/<steps>', methods=['POST', 'GET'])
 def do_fibo(steps):
     try:
