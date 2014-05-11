@@ -16,7 +16,7 @@ api = Flask(__name__)
 
 @api.route('/')
 def index():
-    return "The Fibonacci sequence API.\nSend POST/GET to /api/v1.0/fibo/<int>\n"
+    return "The Fibonacci sequence API.\nSend POST/GET to /fibo/api/v1.0/<int>\n"
 
 
 @api.route('/fibo/api/v1.0/<steps>', methods=['POST', 'GET'])
