@@ -12,6 +12,7 @@ copy the following into a file, I like to call it setup.sh. Use your favorite ed
 
 RHEL-based:
 
+<code>
 yum install -y python-pip git mod_wsgi
 
 pip install virtualenv
@@ -33,6 +34,7 @@ chmod a+xr /etc/init.d/startAPI
 ln -s /etc/init.d/startAPI /etc/rc5.d/S99zapi
 ln -s /etc/init.d/startAPI /etc/rc3.d/S99zapi
 /etc/init.d/startAPI &
+</code>
 
 Ubuntu (if you run Deb, you should know how to edit this):
 
