@@ -14,11 +14,8 @@ RHEL-based:
 
 <code>
 yum install -y python-pip git mod_wsgi
-
 pip install virtualenv
-
 cd /
-
 git clone https://github.com/seven-devils/datAPI
 cd /datAPI
 virtualenv flask
