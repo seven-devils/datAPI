@@ -22,10 +22,8 @@ flask/bin/pip install flask
 iptables -I INPUT -p tcp -m state --state NEW -m tcp --dport 5000 -j ACCEPT
 service iptables save
 service iptables restart
-cat <<EOF >> /etc/init.d/startAPI
-#!/bin/sh
-/datAPI/flask/bin/python /datAPI/api.py
-EOF
+echo "#!/bin/sh" > /etc/init.d/startAPI
+echo "/datAPI/flask/bin/python /datAPI/api.py" >> /etc/init.d/startAPI
 chmod a+xr /etc/init.d/startAPI
 ln -s /etc/init.d/startAPI /etc/rc5.d/S99zapi
 ln -s /etc/init.d/startAPI /etc/rc3.d/S99zapi
@@ -44,10 +42,8 @@ cd /datAPI
 virtualenv flask
 flask/bin/pip install flask
 ufw allow 5000
-cat <<EOF >> /etc/init.d/startAPI
-#!/bin/sh
-/datAPI/flask/bin/python /datAPI/api.py
-EOF
+echo "#!/bin/sh" > /etc/init.d/startAPI
+echo "/datAPI/flask/bin/python /datAPI/api.py" >> /etc/init.d/startAPI
 chmod a+xr /etc/init.d/startAPI
 ln -s /etc/init.d/startAPI /etc/rc5.d/S99zapi
 ln -s /etc/init.d/startAPI /etc/rc3.d/S99zapi
