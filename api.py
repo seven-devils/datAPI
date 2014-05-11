@@ -18,6 +18,10 @@ api = Flask(__name__)
 def index():
     return "The Fibonacci sequence API.\nSend POST/GET to /fibo/api/v1.0/<int>\n"
 
+@api.route('/fibo/api/v1.0/', methods=['POST', 'GET'])
+def do_return():
+    return jsonify(
+        {"result": {"Error01": "You must submit a whole number!"}})
 
 @api.route('/fibo/api/v1.0/<steps>', methods=['POST', 'GET'])
 def do_fibo(steps):
@@ -26,6 +30,7 @@ def do_fibo(steps):
     except ValueError:
         return jsonify(
             {"result": {"Error01": "You must submit a whole number!"}})
+
     obj = restfib()
     result = obj.san_number(steps)
     if result is True:
